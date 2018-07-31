@@ -3,6 +3,6 @@
 
 using namespace std;
 
-string Youtuber::getVideo() const {
+string Youtuber::getState() {
     return newVid;
 }

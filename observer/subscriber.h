@@ -1,4 +1,5 @@
 #include "observer.h"
+#include <string>
 
 class Subject;
 
