@@ -9,3 +9,11 @@ void Subject::notifyObservers() {
         ob->notify(*this);
     }
 }
+
+void Subject::attachObserver(Observer *obs) {
+    observers.emplace_back(obs);
+}
+
+void Subject::detachObservers(){
+    observers.clear();
+}
