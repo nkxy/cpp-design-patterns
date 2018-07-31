@@ -1,8 +1,6 @@
 
 .vscode/settings.json
 
-decorator
-
 *.d 
 
 *.o
