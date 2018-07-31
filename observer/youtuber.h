@@ -6,9 +6,8 @@
 class Youtuber: public Subject {
     std::string newVid;
     public: 
-    std::string getVideo() const; 
     std::string getState() override;
-
+    void uploadVid(std::string name);
 };
 
 #endif
