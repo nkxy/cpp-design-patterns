@@ -9,4 +9,5 @@ string Youtuber::getState() {
 
 void Youtuber::uploadVid(string name) {
     newVid = name;
+    notifyObservers();
 }
