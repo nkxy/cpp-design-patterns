@@ -13,15 +13,13 @@ class Resturant {
 
 class McDonalds: public Resturant {
     public:
-    void acceptCustomer(Customer &c) {
-        c.goTo(*this);
-    }
+    void acceptCustomer(Customer &c);
 };
 
 class Bar: public Resturant {
     public:
     void acceptCustomer(Customer &c) {
-        c.goTo(*this);
+        
     }
 };
 
@@ -36,9 +34,11 @@ class Customer {
 class Kid: public Customer {
     public:
     void goTo(McDonalds &r) override {
+        r = r; //prevent error in compiler for not using r
         cout << "Kid got a Happy Meal :)" << endl;
     }
     void goTo(Bar &r) override {
+        r = r;
         cout << "Kid is under 18 and isn't allowed to eat at the bar." << endl;
     }
 };
@@ -46,12 +46,23 @@ class Kid: public Customer {
 class Adult: public Customer {
     public:
     void goTo(McDonalds &r) override {
+        r = r;
         cout << "The adult got a thicc big Mac" << endl;
     }
     void goTo(Bar &r) override {
+        r = r;
         cout << "The adult got some nice alcoholic drinks :)" << endl;
     }
 };
+
+void McDonalds::acceptCustomer(Customer &c){
+    c.goTo(*this);
+}
+
+void Bar::acceptCustomer(Customer &c){
+    c.goTo(*this);
+}
+
 
 int main() {
     Customer *nick = new Kid();
