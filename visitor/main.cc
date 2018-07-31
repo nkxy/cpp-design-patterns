@@ -18,9 +18,7 @@ class McDonalds: public Resturant {
 
 class Bar: public Resturant {
     public:
-    void acceptCustomer(Customer &c) {
-        
-    }
+    void acceptCustomer(Customer &c);
 };
 
 // Visitor Classes
@@ -69,9 +67,13 @@ int main() {
     Customer *alex = new Adult();
     Resturant *md = new McDonalds();
     Resturant *bar = new Bar();
+    cout << "Nick is going to McDonalds" << endl;
     md->acceptCustomer(*nick);
+     cout << "Alex is going to McDonalds" << endl;
     md->acceptCustomer(*alex);
+     cout << "Nick is going to a bar" << endl;
     bar->acceptCustomer(*nick);
+     cout << "Alex is going to a bar" << endl;
     bar->acceptCustomer(*alex);
     return 0;
 }
